@@ -6,7 +6,6 @@ WriteMakefile(
     NAME              => 'D',
     VERSION_FROM      => 'lib/D.pm', # finds $VERSION
     PREREQ_PM         => {
-      'Data::Recursive::Encode' => '0.07'
     }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/D.pm', # retrieve abstract from module
@@ -16,4 +15,14 @@ WriteMakefile(
     INC               => '-I.', # e.g., '-I. -I/usr/include/other'
 	# Un-comment this if you add C files to link with later:
     # OBJECT            => '$(O_FILES)', # link all the C files too
+    META_MERGE => {
+        'meta-spec' => { version => 2 },
+        resources => {
+            repository => {
+                type => 'git',
+                url  => 'https://github.com/yuki-kimoto/D.git',
+                web  => 'https://github.com/yuki-kimoto/D',
+            },
+        },
+    },
 );
